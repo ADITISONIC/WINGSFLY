@@ -14,8 +14,7 @@ This is a beautifully designed productivity app built with **React Native**. It 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/DailyFocus.git
-cd DailyFocus
+git clone https://github.com/ADITISONIC/WINGSFLY/tree/main
 ```
 2. Install dependencies
 
@@ -117,7 +116,7 @@ git push
 ⸻
 
 🔧 Tech Stack
-	•	React Native (with Expo optional)
+	•	React Native (with Expo optional)       
 	•	TypeScript
 	•	react-native-pager-view
 	•	@react-native-community/datetimepicker
