@@ -1,7 +1,3 @@
-Sure! Here’s the full README.md content ready for copy-pasting into your project:
-
-⸻
-
 
 # 📱 DESCRIPTION
 
@@ -105,7 +101,7 @@ npx react-native link
 
 <Image source={require('../assets/images/task1.png')} />
 
-	•	Git will track image/video assets as long as they’re committed:
+	•      Git will track image/video assets as long as they’re committed:
 
 ```bash
 git add assets/images/
