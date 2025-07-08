@@ -1,97 +1,160 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Sure! Here’s the full README.md content ready for copy-pasting into your project:
 
-# Getting Started
+⸻
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Start Metro
+# 📱 DESCRIPTION
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+This is a beautifully designed productivity app built with **React Native**. It helps users focus on daily goals by organizing tasks, tracking progress, and providing motivational quotes — all within a visually calming pastel-colored interface.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 🚀 Setup Instructions
 
-# OR using Yarn
-yarn start
-```
+### 1. Clone the repository
 
-## Step 2: Build and run your app
+```bash
+git clone https://github.com/your-username/DailyFocus.git
+cd DailyFocus
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+2. Install dependencies
 
-### Android
+Using npm:
 
-```sh
-# Using npm
-npm run android
+npm install
 
-# OR using Yarn
-yarn android
-```
+Or with Yarn:
 
-### iOS
+yarn install
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+3. Run the app
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+If you’re using Expo:
 
-```sh
-bundle install
-```
+npx expo start
 
-Then, and every time you update your native dependencies, run:
+If you’re using React Native CLI:
 
-```sh
-bundle exec pod install
-```
+npx react-native run-android
+# or
+npx react-native run-ios
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
-```sh
-# Using npm
-npm run ios
+⸻
 
-# OR using Yarn
-yarn ios
-```
+📁 Folder Structure Overview
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+DailyFocus/
+├── assets/                 # Fonts and images
+│   ├── fonts/              # Custom fonts (e.g., Anton, OpenSans)
+│   └── images/             # Task-related icons and photos
+├── components/             # Reusable UI components
+│   ├── TaskItem.tsx        # Task display component with dynamic styles
+│   ├── DateSlider.tsx      # Weekly date slider with pager view
+│   └── QuoteCard.tsx       # Motivational quote and progress bar
+├── data/                   # Static/mock task data
+├── screens/                # App screens (e.g., HomeScreen.tsx)
+├── App.tsx                 # Main entry file
+├── react-native.config.js  # Font linking configuration
+├── package.json
+└── README.md
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
 
-## Step 3: Modify your app
+⸻
 
-Now that you have successfully run the app, let's make changes!
+🧠 Key Decisions & Assumptions
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+🎨 Visual Design
+	•	Pastel color palette is used to reduce visual strain and create a focused mood.
+	•	A darker shade of each background color is computed for better text contrast.
+	•	Each task is assigned a photo icon in sequence to maintain consistency.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+🧾 Fonts & Styling
+	•	Uses @expo-google-fonts/open-sans and anton for custom typography.
+	•	If not using Expo, fonts are linked using react-native.config.js:
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+// react-native.config.js
+module.exports = {
+  assets: ['./assets/fonts'],
+};
 
-## Congratulations! :tada:
+Then run:
 
-You've successfully run and modified your React Native App. :partying_face:
+npx react-native link
 
-### Now what?
+🗓️ Date Picker & Weekly Navigation
+	•	Uses react-native-pager-view to slide through weekly date sets (2 weeks before and after current).
+	•	Integrated @react-native-community/datetimepicker for native date selection.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+✅ Task Display
+	•	Each task includes:
+	•	Title
+	•	Icon/photo
+	•	Time with colored background
+	•	Tags and type
+	•	Status icon (done, inprogress, pending) via Ionicons
 
-# Troubleshooting
+📊 Progress & Quotes
+	•	A linear progress bar using react-native-linear-gradient with animated circle.
+	•	Quote section displays a daily motivational quote.
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+⸻
 
-# Learn More
+🖼️ Assets (Images & Videos)
+	•	Task images (PNG) are stored in assets/images/ and assigned by index in order.
+	•	Add new photos by placing them in assets/images and referencing them like:
 
-To learn more about React Native, take a look at the following resources:
+<Image source={require('../assets/images/task1.png')} />
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+	•	Git will track image/video assets as long as they’re committed:
+
+```bash
+git add assets/images/
+git commit -m "Add task icons"
+git push
+
+
+⸻
+
+🔧 Tech Stack
+	•	React Native (with Expo optional)
+	•	TypeScript
+	•	react-native-pager-view
+	•	@react-native-community/datetimepicker
+	•	react-native-linear-gradient
+	•	react-native-vector-icons/Ionicons
+	•	date-fns
+	•	Custom fonts (Anton, OpenSans)
+
+⸻
+
+✅ Features
+	•	🗓️ Swipeable weekly date slider
+	•	🧠 Daily inspirational quote
+	•	✅ Task list with visual cues (color, icon, tags)
+	•	📊 Progress bar with animation
+	•	🎨 Soft pastel theme and dynamic color styling
+
+⸻
+
+📌 Assumptions
+	•	Tasks are stored in memory/static JSON for now (no backend).
+	•	No authentication or user-specific data handling.
+	•	Image assignment is handled in order of appearance — not per task ID.
+
+⸻
+
+💡 Future Enhancements
+	•	Add Firebase/SQLite backend for persistent task storage.
+	•	Add user profile and settings.
+	•	Allow user to mark tasks as complete with state sync.
+	•	Push notifications for scheduled tasks.
+
+⸻
+
+🙌 Acknowledgements
+	•	Icons by Ionicons
+	•	Fonts by Google Fonts
+	•	UI inspiration from pastel and focus-friendly productivity tools
+
+---
