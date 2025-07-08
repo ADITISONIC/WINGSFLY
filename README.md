@@ -16,29 +16,29 @@ This is a beautifully designed productivity app built with **React Native**. It 
 ```bash
 git clone https://github.com/your-username/DailyFocus.git
 cd DailyFocus
-
+```
 2. Install dependencies
 
 Using npm:
-
+```bash
 npm install
-
+```
 Or with Yarn:
-
+```bash
 yarn install
-
+```
 3. Run the app
 
 If you’re using Expo:
-
+```bash
 npx expo start
-
+```
 If you’re using React Native CLI:
-
+```bash
 npx react-native run-android
 # or
 npx react-native run-ios
-
+```
 
 ⸻
 
@@ -72,16 +72,16 @@ DailyFocus/
 🧾 Fonts & Styling
 	•	Uses @expo-google-fonts/open-sans and anton for custom typography.
 	•	If not using Expo, fonts are linked using react-native.config.js:
-
+```bash
 // react-native.config.js
 module.exports = {
   assets: ['./assets/fonts'],
 };
-
+```
 Then run:
-
+```bash
 npx react-native link
-
+```
 🗓️ Date Picker & Weekly Navigation
 	•	Uses react-native-pager-view to slide through weekly date sets (2 weeks before and after current).
 	•	Integrated @react-native-community/datetimepicker for native date selection.
@@ -112,7 +112,7 @@ npx react-native link
 git add assets/images/
 git commit -m "Add task icons"
 git push
-
+```
 
 ⸻
 
